@@ -1,0 +1,10 @@
+{
+  "unique_identifier": "c64emu",
+  "name": "c64emu",
+  "author": "Beep Boop",
+  "version": "1",
+  "interpreter": "",
+  "metadata_file": "",
+  "binary_path": "c64emu",
+  "source": 1
+}

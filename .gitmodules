@@ -1,0 +1,6 @@
+[submodule "chips"]
+	path = chips
+	url = https://github.com/floooh/chips.git
+[submodule "chips-test"]
+	path = chips-test
+	url = https://github.com/floooh/chips-test.git
