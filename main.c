@@ -141,9 +141,9 @@ int main()
             }
 
             key_mod_t mod = e.keyboard.mod;
-            char ch = keyboard_get_ascii(scancode, mod);
+            char ch;
 
-            switch (ch) {
+            switch (scancode) {
                 case KEY_SCANCODE_RETURN:       ch = 0x0D; break; // ENTER
                 case KEY_SCANCODE_BACKSPACE:    ch = 0x01; break; // BACKSPACE
                 case KEY_SCANCODE_ESCAPE:       ch = 0x03; break; // ESCAPE
@@ -151,6 +151,7 @@ int main()
                 case KEY_SCANCODE_RIGHT:        ch = 0x09; break; // RIGHT
                 case KEY_SCANCODE_UP:           ch = 0x0B; break; // UP
                 case KEY_SCANCODE_DOWN:         ch = 0x0A; break; // DOWN
+                default:                        ch = keyboard_get_ascii(scancode, mod);
             }
 
             if (ch > 32) {
