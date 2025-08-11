@@ -132,6 +132,7 @@ int main()
 
         // keyboard input
         event_t e = window_event_poll(window, false, 0);
+
         if (e.type == EVENT_KEY_DOWN) {
             keyboard_scancode_t scancode = e.keyboard.scancode;
 
@@ -139,7 +140,8 @@ int main()
                 break;
             }
 
-            char ch = keyboard_get_ascii(scancode, 0);
+            key_mod_t mod = e.keyboard.mod;
+            char ch = keyboard_get_ascii(scancode, mod);
 
             switch (ch) {
                 case KEY_SCANCODE_RETURN:       ch = 0x0D; break; // ENTER
@@ -176,7 +178,7 @@ int main()
         if (sleep_time > 0) {
             usleep(sleep_time);
         }
-        //printf("elapsed us: %lu\n", elapsed_us);
+        //printf("elapsed us: %lu\n", elapsed_time_us);
     }
 
     free(emulator);
